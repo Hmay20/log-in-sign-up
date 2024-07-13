@@ -1,0 +1,106 @@
+/* index.css */
+/* Specific styles for the index.html page */
+:root {
+  --font-nunito: 'Nunito', sans-serif;
+  --font-nunito-sans: 'Nunito Sans', sans-serif;
+  --font-size-base: 16px;
+  --color-black: #000;
+  --color-gray: #808080;
+  --color-white: #fff;
+  --br-7xs: 4px;
+  --padding-3xs: 4px;
+  --padding-6xl: 24px;
+}
+
+.log-insign-up {
+  border: 0;
+  outline: 0;
+  font-family: var(--font-nunito);
+  font-size: 32px;
+  background-color: transparent;
+  width: 326px;
+  position: relative;
+  color: var(--color-black);
+  text-align: center;
+  display: inline-block;
+  height: 76px;
+  flex-shrink: 0;
+}
+
+.done,
+.frame-child {
+  font-size: var(--font-size-base);
+}
+
+.frame-child {
+  border: 1px solid var(--color-black);
+  outline: 0;
+  font-family: var(--font-nunito);
+  background-color: var(--color-white);
+  align-self: stretch;
+  border-radius: var(--br-7xs);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-3xs) var(--padding-6xl);
+  color: var(--color-gray);
+}
+
+.done {
+  position: relative;
+  font-family: var(--font-nunito-sans);
+  color: var(--color-black);
+  text-align: center;
+}
+
+.done-wrapper {
+  cursor: pointer;
+  border: 1px solid var(--color-black);
+  padding: var(--padding-3xs) var(--padding-6xl);
+  background-color: #ffc65c;
+  border-radius: var(--br-7xs);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.done-wrapper:hover {
+  background-color: rgba(255, 198, 92, 0.75);
+}
+
+.done-wrapper:active {
+  background-color: #eeb752;
+}
+
+.done-wrapper:disabled {
+  background-color: #cbcbcb;
+}
+
+.log-insign-up-parent,
+.macbook-air-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.log-insign-up-parent {
+  align-self: stretch;
+  flex: 1;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #ffe4b7;
+  padding: var(--padding-3xs) 175px;
+  gap: 50px;
+}
+
+.macbook-air-1 {
+  width: 100%;
+  position: relative;
+  background-color: #ffdea1;
+  height: 832px;
+  overflow: hidden;
+  padding: 202px 247px;
+  box-sizing: border-box;
+}

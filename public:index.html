@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@400&display=swap"
+    />
+    <title>Sign Up / Login</title>
+    <style>
+      /* Your CSS styles here */
+    </style>
+  </head>
+  <body>
+    <div class="macbook-air-1">
+      <div class="log-insign-up-parent">
+        <input class="log-insign-up" type="text" placeholder="LOG IN/SIGN UP" disabled />
+        <input id="emailInput" class="frame-child" placeholder="EMAIL" type="email" />
+        <input id="passwordInput" class="frame-child" placeholder="PASSWORD" type="password" />
+        <button class="done-wrapper" id="frameButton">
+          <div class="done">DONE</div>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('frameButton').addEventListener('click', async function () {
+        const email = document.getElementById('emailInput').value;
+        const password = document.getElementById('passwordInput').value;
+
+        if (!email || !password) {
+          alert('Please enter both email and password');
+          return;
+        }
+
+        // Check if email exists
+        const response = await fetch('/signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email, password }),
+        });
+
+        if (response.ok) {
+          alert('User created');
+        } else if (response.status === 400) {
+          const loginResponse = await fetch('/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+          });
+
+          if (loginResponse.ok) {
+            alert('Login successful');
+          } else {
+            alert('Incorrect email or password');
+          }
+        } else {
+          alert('Internal server error');
+        }
+      });
+    </script>
+  </body>
+</html>

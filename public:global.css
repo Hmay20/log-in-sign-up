@@ -1,0 +1,9 @@
+/* global.css */
+/* Add your global styles here */
+/* global.css */
+/* Global styles for the entire application */
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background-color: #ffdea1;
+}
